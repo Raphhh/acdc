@@ -1,0 +1,31 @@
+{
+    "name": "raphhh/acdc",
+    "description": "PHP generator stream",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raphaël Lefebvre",
+            "email": "raphael@raphaellefebvre.be"
+        }
+    ],
+    "keywords": [
+        "PHP",
+        "generator",
+        "stream"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ac\\": [
+                "src/",
+                "tests/"
+            ]
+        }
+    },
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable"
+    }
+}
