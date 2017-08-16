@@ -1,4 +1,4 @@
-# Ac\Dc: PHP generator stream
+# Ac\Dc: PHP Generator stream
 
 [![Latest Stable Version](https://poser.pugx.org/raphhh/acdc/v/stable.svg)](https://packagist.org/packages/raphhh/acdc)
 [![Build Status](https://travis-ci.org/Raphhh/acdc.png)](https://travis-ci.org/Raphhh/acdc)
@@ -15,6 +15,6 @@ $ composer require raphhh/acdc
 ## Usage
 
 ```
-$acdc = new Ac\dc();
+$acdc = new Ac\Dc();
 $resource = $acdc->createStream($generator);
 ```
