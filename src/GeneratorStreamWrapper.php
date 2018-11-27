@@ -35,7 +35,7 @@ class GeneratorStreamWrapper
     {
         $result = $this->generator->current();
         $this->generator->next();
-        return $result;
+        return (string)$result;
     }
 
     /**
