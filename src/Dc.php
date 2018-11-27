@@ -9,6 +9,11 @@ class Dc
     const SCHEME = 'generator';
 
     /**
+     * default host
+     */
+    const HOST = '__acdc__';
+
+    /**
      * @var bool
      */
     private static $isRegistered = false;
@@ -19,12 +24,19 @@ class Dc
     private $scheme;
 
     /**
+     * @var string
+     */
+    private $host;
+
+    /**
      * Dc constructor.
      * @param string $scheme
+     * @param string $host
      */
-    public function __construct($scheme = self::SCHEME)
+    public function __construct($scheme = self::SCHEME, $host = self::HOST)
     {
         $this->scheme = $scheme;
+        $this->host = $host;
         $this->register();
     }
 
@@ -65,9 +77,9 @@ class Dc
             throw new \BadMethodCallException(sprintf('"%s" scheme is not registered', $this->scheme));
         }
 
-        $GLOBALS['__acdc__'] = $generator;
-        $resource = fopen($this->scheme . '://__acdc__', 'r');
-        unset($GLOBALS['__acdc__']);
+        $GLOBALS[$this->host] = $generator;
+        $resource = fopen($this->scheme . '://' .  $this->host, 'r');
+        unset($GLOBALS[$this->host]);
         return $resource;
     }
 
